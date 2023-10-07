@@ -10,8 +10,8 @@ const TestmonialList = () => {
           {/* <!-- Heading Content --> */}
           <div className="mb-8 md:mb-12 lg:mb-16">
             <div className="w-full max-w-[800px] text-center">
-              <h2 className="mb-5 text-4xl text-color-white font-semibold md:text-5xl">
-                What our <span className="text-color-blue">clients are</span>{" "}
+              <h2 className="mb-5 text-4xl text-color-white font-semibold md:text-4xl">
+                What our <span className="text-color-blue">customers are</span>{" "}
                 saying
               </h2>
               <div className="mx-auto w-full max-w-lg">

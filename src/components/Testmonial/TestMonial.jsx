@@ -1,3 +1,4 @@
+import PropsTypes from "prop-types";
 const TestMonial = ({ name }) => {
   return (
     <div
@@ -97,5 +98,7 @@ const TestMonial = ({ name }) => {
     </div>
   );
 };
-
+TestMonial.propTypes = {
+  name: PropsTypes.string,
+};
 export default TestMonial;
