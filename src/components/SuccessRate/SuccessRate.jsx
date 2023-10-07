@@ -17,9 +17,8 @@ const SuccessRate = () => {
             Our <span className="text-color-blue">History</span>
           </h2>
           <div className="mx-auto mb-8 mt-4 max-w-[528px] md:mb-12 lg:mb-16">
-            <p className="text-color-gray">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit ut
-              aliquam,purus sit amet luctus magna fringilla urna
+            <p className="text-center text-lg text-color-gray font-semibold leading-7 mt-2">
+              Our Customers and Orders
             </p>
           </div>
         </div>
