@@ -1,0 +1,44 @@
+[
+  {
+    "id": "f47a6c70-19f0-4c95-94c2-6a74deaf1234",
+    "eventName": "Birthday Party Photography",
+    "details": "Capture the precious moments of your birthday celebration with our professional photography services. Our experienced photographers will ensure that every smile, laugh, and memorable moment is beautifully captured. From candid shots to posed portraits, we'll create a stunning visual record of your special day. Don't miss out on preserving the memories of your birthday party. Book our photography services today!",
+    "image": "https://vinusimages.co/wp-content/uploads/2018/10/EG7A2013-Recovered.jpgwebsite.jpg",
+    "price": "$500"
+  },
+  {
+    "id": "a4e78b2f-8c09-42d7-94d1-02d3f5ca5678",
+    "eventName": "Hall Ceiling & Table Decorate",
+    "details": "Transform your birthday party venue into a magical and elegant space with our ceiling and table decor services. Our team of decorators will work closely with you to bring your vision to life. We'll create a captivating atmosphere with exquisite table centerpieces, elegant drapes, and stunning ceiling decorations. Make your birthday celebration unforgettable with our decor expertise!",
+    "image": "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2021/12/featured-image-color-trends.jpeg.jpg",
+    "price": "$800"
+  },
+  {
+    "id": "2f1d5e3a-7b9e-4c8f-95ce-1f68a3de8765",
+    "eventName": "Balloon Decorate & Set-Up",
+    "details": "Add a burst of color and fun to your birthday party with our creative balloon decor and set-up services. Our talented balloon artists will craft eye-catching balloon arrangements that match your chosen theme. From balloon arches to whimsical balloon sculptures, we'll create a festive and lively atmosphere that will delight guests of all ages. Elevate your celebration with our balloon decor!",
+    "image": "https://images.unsplash.com/photo-1560128411-79892dd93bf8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "price": "$350"
+  },
+  {
+    "id": "6d9f8a1c-3c2b-4f54-97d7-8e79a2b04567",
+    "eventName": "Custom Cake Design",
+    "details": "Make your birthday cake the centerpiece of your celebration with our custom cake design services. Our talented bakers and cake artists will work closely with you to create a delicious and visually stunning cake that matches your birthday theme and preferences. From elegant tiered cakes to fun and whimsical designs, your cake will be a work of art!",
+    "image": "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1928&q=80",
+    "price": "$300"
+  },
+  {
+    "id": "e5c3d1b9-2a7f-4e86-8364-4d12f7ab1234",
+    "eventName": "Lighting & Sound System",
+    "details": "Set the perfect ambiance for your birthday party with our professional lighting and sound system services. Our experienced technicians will create a captivating atmosphere with creative lighting effects and provide crystal-clear sound for your music and speeches. Your guests will be immersed in an audiovisual experience they won't forget!",
+    "image": "https://images.pexels.com/photos/1042152/pexels-photo-1042152.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "price": "$600"
+  },
+  {
+    "id": "d3f2c8e1-1b9a-4f4d-8a7e-6a7b2c045678",
+    "eventName": "Projection & Live-Telecast Services",
+    "details": "Share the magic of your birthday celebration with friends and family who can't be there in person. Our projection and live-telecast services allow you to broadcast your party to remote guests in real-time. Whether it's a heartfelt speech or a surprise moment, everyone can be a part of the celebration. Connect with loved ones near and far with our technology solutions!",
+    "image": "https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "price": "$400"
+  }
+]

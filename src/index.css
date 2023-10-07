@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 nav a.active {
-    color: orangered
+    background-color: #1F2937;
+    color: #E2E8F0;
 }
 
 .btn {
@@ -18,8 +19,8 @@ nav a.active {
     align-items: center;
     overflow: hidden;
     z-index: 1;
-    box-shadow: 6px 6px 12px #c5c5c5,
-        -6px -6px 12px #ffffff;
+    /* box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff; */
 }
 
 .btn::before {
@@ -30,7 +31,8 @@ nav a.active {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    background-image: linear-gradient(to right, #0284C7 0%, #0284C7 100%);
+    color: #fff;
     transition: .5s ease;
     display: block;
     z-index: -1;
@@ -38,6 +40,7 @@ nav a.active {
 
 .btn:hover::before {
     width: 9em;
+    color: #fff;
 }
 
 

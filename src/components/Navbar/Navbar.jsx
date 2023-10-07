@@ -5,10 +5,10 @@ import { useState } from "react";
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   return (
-    <section>
-      <div className="h-auto w-screen bg-white py-2 text-color-black">
+    <section className="sticky top-0 z-50 border-b border-[rgba(248,250,252,.08)]">
+      <div className="h-auto w-screen bg-[#0C1322] py-2 text-color-gray">
         <nav className="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0">
-          <div className="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-4 xl:px-20">
+          <div className="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-2 xl:px-20">
             {/* <!-- LOGO - YOU CAN REPLACE THIS --> */}
             <Link to={"/"}>
               <img
@@ -25,24 +25,27 @@ const Navbar = () => {
             >
               <NavLink
                 to={"/"}
-                className="px-5 py-2 font-semibold text-color-black transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
+                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
               >
                 Home
               </NavLink>
               <NavLink
                 to={"/pricing"}
-                className="px-5 py-2 font-semibold text-color-black transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
+                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
               >
                 Pricing
               </NavLink>
               <NavLink
                 to={"/about"}
-                className="px-5 py-2 font-semibold text-color-black transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
+                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
               >
                 About
               </NavLink>
 
-              <Link to={"/login"} className="btn">
+              <Link
+                to={"/login"}
+                className="w-[5em] h-[2em] flex justify-center items-center bg-[#0284C7] rounded-[30em] text-color-white font-semibold"
+              >
                 Login
               </Link>
             </div>
