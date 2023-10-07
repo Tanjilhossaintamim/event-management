@@ -6,7 +6,7 @@ const Service = ({ service }) => {
   return (
     <div
       data-aos="fade-up"
-      className="block h-[550px] rounded-lg bg-[#0F172A] border border-[rgba(248,250,252,.08)]  hover:shadow-lg   transition-all duration-300 hover:scale-105"
+      className="block h-[550px] rounded-lg bg-[#0F172A] border border-color-border  hover:shadow-lg   transition-all duration-300 hover:scale-105"
     >
       <div
         className="relative overflow-hidden bg-cover bg-no-repeat min-h-[350px] grow cursor-pointer"

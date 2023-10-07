@@ -6,7 +6,7 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   return (
     <section className="sticky top-0 z-50 border-b border-[rgba(248,250,252,.08)]">
-      <div className="h-auto w-screen bg-[#0C1322] py-2 text-color-gray">
+      <div className="h-auto w-screen bg-[#131A29] py-2 text-color-gray">
         <nav className="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0">
           <div className="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-2 xl:px-20">
             {/* <!-- LOGO - YOU CAN REPLACE THIS --> */}

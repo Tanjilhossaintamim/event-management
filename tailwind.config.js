@@ -16,6 +16,7 @@ export default {
         "color-white": "#E2E8F0",
         "color-blue": "#38BDF8",
         "color-gray": "#94a3b4",
+        "color-border": "rgba(248,250,252,.08)",
       }
     },
   },
