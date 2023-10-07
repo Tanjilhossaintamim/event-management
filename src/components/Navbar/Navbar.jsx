@@ -42,9 +42,9 @@ const Navbar = () => {
                 About
               </NavLink>
 
-              <NavLink to={"/login"} className="btn">
-                <span>Login</span>
-              </NavLink>
+              <Link to={"/login"} className="btn">
+                Login
+              </Link>
             </div>
             {/* <!-- BURGER MENU --> */}
             <span

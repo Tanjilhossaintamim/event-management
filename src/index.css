@@ -7,62 +7,44 @@ nav a.active {
 }
 
 .btn {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 18px;
+    border: none;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
-    background: #183153;
-    font-family: "Montserrat", sans-serif;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    border: none;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
 }
 
-.btn:after {
-    content: " ";
-    width: 0%;
-    height: 100%;
-    background: #FFD401;
+.btn::before {
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
     position: absolute;
-    transition: all 0.4s ease-in-out;
-    right: 0;
-}
-
-.btn:hover::after {
-    right: auto;
+    top: 0;
     left: 0;
-    width: 100%;
+    background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
 }
 
-.btn span {
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-    padding: 18px 25px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    z-index: 20;
-    transition: all 0.3s ease-in-out;
+.btn:hover::before {
+    width: 9em;
 }
 
-.btn:hover span {
-    color: #183153;
-    animation: scaleUp 0.3s ease-in-out;
-}
 
-@keyframes scaleUp {
-    0% {
-        transform: scale(1);
-    }
+.text-box {
 
-    50% {
-        transform: scale(0.95);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    background: linear-gradient(80deg, #2af589 0%, #009efd 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

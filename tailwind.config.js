@@ -12,6 +12,7 @@ export default {
       colors: {
         "color-background": "#0D1D31",
         "color-black": "#403F3F",
+        "color-yellow": "#FCB41E",
       }
     },
   },
