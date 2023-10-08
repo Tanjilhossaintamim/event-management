@@ -20,13 +20,13 @@ const DropDown = ({ showDropDown, control }) => {
         />
       </div>
       <ul
-        className={`absolute z-[1000] float-left m-0 min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 mt-3 ${
+        className={`absolute z-[1000] float-left m-0 w-3 min-w-max list-none overflow-hidden rounded-lg border-none bg-[#1E293B] border border-color-border bg-clip-padding text-left text-base shadow-lg  mt-3 ${
           showDropDown ? "block" : "hidden"
         } `}
         aria-labelledby="dropdownMenuSmallButton"
       >
         <li onClick={handelSignOut}>
-          <span className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600 cursor-pointer">
+          <span className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal  hover:bg-color-background hover:text-color-white  cursor-pointer">
             Logout
           </span>
         </li>
