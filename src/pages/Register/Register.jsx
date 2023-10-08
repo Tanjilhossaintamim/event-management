@@ -1,9 +1,24 @@
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { validateEmail } from "../../utils/validateEmail";
+import { userSchema } from "../../utils/validateEmail";
+import { useFormik } from "formik";
 
 const Register = () => {
+  const { values, handleChange, handleSubmit, errors, touched, handleBlur } =
+    useFormik({
+      initialValues: {
+        name: "",
+        email: "",
+        password: "",
+        confirmpassword: "",
+        checkbox:""
+      },
+      validationSchema: userSchema,
+      onSubmit: (values) => {
+        console.log(values);
+      },
+    });
   const [type, setType] = useState("password");
   const [confirmPasswordType, setConfirmPasswordTypeType] =
     useState("password");
@@ -15,59 +30,7 @@ const Register = () => {
       ? setConfirmPasswordTypeType("text")
       : setConfirmPasswordTypeType("password");
   };
-  // for error
-  const [emailError, setEmailError] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
-  // input value
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmpassword] = useState("");
-
-  const handelRegister = (e) => {
-    e.preventDefault();
-    setNameError("");
-    setEmailError("");
-    setPasswordError("");
-    setConfirmPasswordError("");
-    const eerror = validateEmail(email);
-    const ename = name.length < 4;
-    if (!eerror) {
-      setEmailError("Email Invalid !");
-    }
-    if (ename) {
-      setNameError("name mustbe 4 character");
-    }
-    // regular expession for password
-    const capitalLetterRegex = /[A-Z]/;
-    const hasCapitalLetter = capitalLetterRegex.test(password);
-    const smallLetterRegex = /[a-z]/;
-    const hasSmallLetter = smallLetterRegex.test(password);
-    const specialCharacterRegex = /[!@#$%^&*()_+{}[\]:;<>,.?~]/;
-    const hasSpecialCharacter = specialCharacterRegex.test(password);
-    const numberRegex = /\d/;
-    const hasNumber = numberRegex.test(password);
-    const lengthRegex = /.{8,}/;
-    const isLengthValid = lengthRegex.test(password);
-
-    if (!isLengthValid) {
-      setPasswordError("Password mustbe 8 character !");
-    } else if (!hasSmallLetter) {
-      setPasswordError("Password mustbe atlast one smallletter !");
-    } else if (!hasSpecialCharacter) {
-      setPasswordError("Password mustbe atlast one special character !");
-    } else if (!hasNumber) {
-      setPasswordError("Password mustbe atlast one number !");
-    } else if (!hasCapitalLetter) {
-      setPasswordError("Password mustbe atlast one capitalletter !");
-    }
-    if (password != confirmpassword) {
-      setConfirmPasswordError("password does not matched !");
-    }
-  };
   return (
     <div className="flex justify-center items-center my-10 ">
       <div className="text-color-white text-center font-bold px-4 lg:px-0 ">
@@ -79,10 +42,7 @@ const Register = () => {
         </p>
 
         <div className="w-full lg:w-[500px] mt-10">
-          <form
-            onSubmit={handelRegister}
-            className="w-full flex flex-col gap-9"
-          >
+          <form onSubmit={handleSubmit} className="w-full flex flex-col gap-9">
             <div className="w-full text-start flex flex-col gap-3 justify-start">
               <label className="text-color-gray" htmlFor="email">
                 Your Name <span className="text-red-800">*</span>
@@ -93,11 +53,13 @@ const Register = () => {
                 id="name"
                 placeholder="Tanjil Hossain"
                 className="bg-[#243149] h-9 px-3 rounded outline-none"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
               />
-              {nameError && <small className="text-red-700">{nameError}</small>}
+              {errors.name && touched.name && (
+                <small className="text-red-700">{errors.name}</small>
+              )}
             </div>
             <div className="w-full text-start flex flex-col gap-3 justify-start">
               <label className="text-color-gray" htmlFor="email">
@@ -109,12 +71,11 @@ const Register = () => {
                 id="email"
                 placeholder="exmple@gmail.com"
                 className="bg-[#243149] h-9 px-3 rounded outline-none"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={values.email}
+                onChange={handleChange}
               />
-              {emailError && (
-                <small className="text-red-700">{emailError}</small>
+              {errors.email && touched.email && (
+                <small className="text-red-700">{errors.email}</small>
               )}
             </div>
             <div className="w-full text-start flex flex-col gap-3 justify-start">
@@ -128,9 +89,8 @@ const Register = () => {
                   id="password"
                   placeholder="***********"
                   className="bg-[#243149] h-9 px-3 rounded-l w-full outline-none"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={values.password}
+                  onChange={handleChange}
                 />
                 <div
                   onClick={handelShowPassword}
@@ -143,8 +103,8 @@ const Register = () => {
                   )}
                 </div>
               </div>
-              {passwordError && (
-                <small className="text-red-700">{passwordError}</small>
+              {errors.password && touched.password && (
+                <small className="text-red-700">{errors.password}</small>
               )}
             </div>
             <div className="w-full text-start flex flex-col gap-3 justify-start">
@@ -158,9 +118,8 @@ const Register = () => {
                   id="password"
                   placeholder="***********"
                   className="bg-[#243149] h-9 px-3 rounded-l w-full outline-none"
-                  required
-                  value={confirmpassword}
-                  onChange={(e) => setConfirmpassword(e.target.value)}
+                  value={values.confirmpassword}
+                  onChange={handleChange}
                 />
 
                 <div
@@ -174,20 +133,21 @@ const Register = () => {
                   )}
                 </div>
               </div>
-              {confirmPasswordError && (
-                <small className="text-red-700">{confirmPasswordError}</small>
+              {errors.confirmpassword && touched.confirmpassword && (
+                <small className="text-red-700">{errors.confirmpassword}</small>
               )}
             </div>
-            <div className="flex justify-start gap-2 items-center text-color-gray">
+            {/* <div className="flex justify-start gap-2 items-center text-color-gray">
               <input
                 type="checkbox"
-                name="tarms"
-                required
+                name="checkbox"
+                checked={values.checkbox}
+                onChange={handleChange}
                 id=""
                 className="bg-color-gray"
               />{" "}
               accept terms & condition
-            </div>
+            </div> */}
             <div className="w-full flex justify-between items-center">
               <button
                 type="submit"
