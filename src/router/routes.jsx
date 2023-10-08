@@ -4,6 +4,8 @@ import App from "../App";
 import EventDetails from "../pages/EventDetails/EventDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
 const routes = createBrowserRouter([
   {
@@ -16,16 +18,28 @@ const routes = createBrowserRouter([
       },
       {
         path: "/event-details/:id",
-        element: <EventDetails />,
+        element: (
+          <PrivateRoute>
+            <EventDetails />
+          </PrivateRoute>
+        ),
       },
 
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        ),
       },
       {
         path: "/register",
-        element: <Register />,
+        element: (
+          <PublicRoute>
+            <Register />
+          </PublicRoute>
+        ),
       },
     ],
   },

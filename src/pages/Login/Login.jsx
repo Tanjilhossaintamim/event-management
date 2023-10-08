@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signInSchema } from "../../utils/validateEmail";
 import { AuthContex } from "../../provider/AuthProvider";
 
@@ -11,6 +11,7 @@ const Login = () => {
     useContext(AuthContex);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const handelGoogleSignIn = () => {
     googleSignIn();
@@ -20,7 +21,7 @@ const Login = () => {
     signInuser(email, password)
       .then(() => {
         setLoading(false);
-        navigate("/");
+        navigate(state ? state : "/");
       })
       .catch((err) => {
         setLoading(false);
