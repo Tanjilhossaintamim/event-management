@@ -18,3 +18,11 @@ export let userSchema = object({
         .oneOf([ref("password")], "Passwords does not match"),
 
 });
+export let signInSchema = object({
+
+    email: string().email().required(),
+    password: string().required("Please enter a password")
+        .min(8, "Password must have at least 8 characters")
+
+
+});

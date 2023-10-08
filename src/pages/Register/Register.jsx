@@ -6,9 +6,12 @@ import { useFormik } from "formik";
 import { AuthContex } from "../../provider/AuthProvider";
 
 const Register = () => {
-  const { registerUser, setModalOpen, setModalMessage } =
+  const { registerUser, setModalOpen, setModalMessage, googleSignIn } =
     useContext(AuthContex);
   const [loading, setLoading] = useState(false);
+  const handelGoogleSignIn = () => {
+    googleSignIn();
+  };
   const handelCreateUser = (email, password) => {
     setLoading(true);
     registerUser(email, password)
@@ -178,7 +181,10 @@ const Register = () => {
                 Forgot Password?
               </Link>
             </div>
-            <span className="text-color-gray py-2 border-2 w-2/3 mx-auto border-color-border rounded-3xl">
+            <span
+              className="text-color-gray py-2 border-2 w-2/3 mx-auto border-color-border rounded-3xl cursor-pointer"
+              onClick={handelGoogleSignIn}
+            >
               Continue With Google
             </span>
             <p className="text-color-gray">
