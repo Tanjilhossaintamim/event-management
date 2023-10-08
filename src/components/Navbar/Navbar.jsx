@@ -6,17 +6,19 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   return (
     <section className="sticky top-0 z-50 border-b border-[rgba(248,250,252,.08)]">
-      <div className="h-auto w-screen bg-[#131A29] py-2 text-color-gray">
+      <div className="h-auto  bg-[#131A29] py-2 text-color-gray">
         <nav className="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0">
           <div className="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-2 xl:px-20">
             {/* <!-- LOGO - YOU CAN REPLACE THIS --> */}
-            <Link className="flex items-center" to={"/"}>
+            <Link className="flex items-center w-8 h-5" to={"/"}>
               <img
                 src={Logo}
                 alt=""
                 className="inline-block max-h-10 max-w-full ring-1 ring-[#00D991] rounded-full p-1"
               />
-              <span className="mt-3 ml-1 text-base text-color-white italic font-bold">Event</span>
+              <span className="mt-3 ml-1 text-base text-color-white italic font-bold">
+                Event
+              </span>
             </Link>
             {/* <!-- MENU CONTENT 2 --> */}
             <div
@@ -56,8 +58,8 @@ const Navbar = () => {
               className="absolute right-5 lg:hidden cursor-pointer"
             >
               <svg
-                width="1.25rem"
-                height="1rem"
+                width="20px"
+                height="20px"
                 viewBox="0 0 20 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
