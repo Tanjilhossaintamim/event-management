@@ -1,11 +1,13 @@
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
 import PropsTypes from "prop-types";
 import { useState } from "react";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import auth from "../utils/firebase";
 
@@ -27,6 +29,18 @@ const AuthProvider = ({ children }) => {
   const googleSignIn = () => {
     return signInWithPopup(auth, googleProvider);
   };
+  // logout
+  const logout = () => {
+    return signOut(auth);
+  };
+
+  // observe user
+  useEffect(() => {
+    const subscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => subscribe();
+  }, []);
 
   const allvalues = {
     user,
@@ -37,6 +51,7 @@ const AuthProvider = ({ children }) => {
     setModalMessage,
     signInuser,
     googleSignIn,
+    logout,
   };
 
   return (

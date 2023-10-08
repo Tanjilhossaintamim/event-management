@@ -1,9 +1,13 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "../../assets/icons8-flower-80 (1).png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContex } from "../../provider/AuthProvider";
+import DropDown from "./DropDown";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContex);
   const [showNav, setShowNav] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(false);
   const loaction = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -48,13 +52,19 @@ const Navbar = () => {
               >
                 About
               </NavLink>
-
-              <Link
-                to={"/login"}
-                className="w-[5em] h-[2em] flex justify-center items-center bg-[#0284C7] rounded-[30em] text-color-white font-semibold"
-              >
-                Login
-              </Link>
+              {!user ? (
+                <Link
+                  to={"/login"}
+                  className="w-[5em] h-[2em] flex justify-center items-center bg-[#0284C7] rounded-[30em] text-color-white font-semibold"
+                >
+                  Login
+                </Link>
+              ) : (
+                <DropDown
+                  showDropDown={showDropDown}
+                  control={() => setShowDropDown((prv) => !prv)}
+                />
+              )}
             </div>
             {/* <!-- BURGER MENU --> */}
             <span
