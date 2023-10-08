@@ -1,9 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Logo from "../../assets/icons8-flower-80 (1).png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
+  const loaction = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [loaction]);
   return (
     <section className="sticky top-0 z-50 border-b border-[rgba(248,250,252,.08)]">
       <div className="h-auto  bg-[#131A29] py-2 text-color-gray">

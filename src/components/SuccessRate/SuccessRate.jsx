@@ -26,7 +26,7 @@ const SuccessRate = () => {
         <div className="mx-auto flex max-w-[960px] flex-col px-16 py-8">
           <div
             ref={ref}
-            className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:gap-12 lg:grid-cols-4"
+            className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-2 md:gap-12 lg:grid-cols-4"
           >
             {/* <!-- Fact Item --> */}
             <div className="flex flex-col items-center justify-center gap-4">
@@ -39,7 +39,7 @@ const SuccessRate = () => {
                   </>
                 )}
               </h2>
-              <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
+              <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-5xl ">
                 200 <span className="text-color-blue">+</span>
               </h2>
             </div>
@@ -49,7 +49,7 @@ const SuccessRate = () => {
               <h2 className="hidden lg:block mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
                 {isVisible && <CountUp start={0} end={15} />}
               </h2>
-              <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
+              <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-4xl">
                 15 <span className="text-color-blue">+</span>
               </h2>
             </div>
@@ -64,18 +64,18 @@ const SuccessRate = () => {
                   </>
                 )}
               </h2>
-              <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
+              <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-4xl">
                 1500 <span className="text-color-blue">+</span>
               </h2>
             </div>
             {/* <!-- Fact Item --> */}
             <div className="flex flex-col items-center justify-center gap-4">
-              <p>Support Tickets</p>
+              <p>Awards</p>
               <h2 className="hidden lg:block mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
-                {isVisible && <CountUp start={0} end={630} />}
+                {isVisible && <CountUp start={0} end={10} />}
               </h2>
               <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
-                630
+                10
               </h2>
             </div>
           </div>

@@ -8,14 +8,15 @@ const Login = () => {
     type == "password" ? setType("text") : setType("password");
   };
   return (
-    <div className="flex justify-center items-center py-10 h-[70vh]">
-      <div className="text-color-white text-center font-bold ">
+    <div className="flex justify-center items-center my-10 h-[70vh]">
+      <div className="text-color-white text-center font-bold px-4 lg:px-0 ">
         <h1 className="text-4xl text-center">
           Please <span className="text-color-blue">Login</span>{" "}
         </h1>
         <p className="text-color-gray text-base mt-2 text-center">
           Don&apos;t share your login information with other.
         </p>
+
         <div className="w-full lg:w-[500px] mt-10">
           <form className="w-full flex flex-col gap-9">
             <div className="w-full text-start flex flex-col gap-3 justify-start">
@@ -27,7 +28,7 @@ const Login = () => {
                 name="email"
                 id="email"
                 placeholder="exmple@gmail.com"
-                className="bg-[#243149] h-9 px-3 rounded"
+                className="bg-[#243149] h-9 px-3 rounded outline-none"
                 required
               />
             </div>
@@ -41,7 +42,7 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="***********"
-                  className="bg-[#243149] h-9 px-3 rounded-l w-full"
+                  className="bg-[#243149] h-9 px-3 rounded-l w-full outline-none"
                   required
                 />
                 <div
@@ -63,10 +64,20 @@ const Login = () => {
               >
                 Login
               </button>
+
               <Link to={"/"} className="text-[#309CCF] cursor-pointer">
                 Forgot Password?
               </Link>
             </div>
+            <span className="text-color-gray py-2 border-2 w-2/3 mx-auto border-color-border rounded-3xl">
+              Continue With Google
+            </span>
+            <p className="text-color-gray">
+              don&apos;t an account ?{" "}
+              <Link className="text-[#309CCF] hover:underline" to={"/register"}>
+                register
+              </Link>
+            </p>
           </form>
         </div>
       </div>
