@@ -1,10 +1,27 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { userSchema } from "../../utils/validateEmail";
 import { useFormik } from "formik";
+import { AuthContex } from "../../provider/AuthProvider";
 
 const Register = () => {
+  const { registerUser, setModalOpen, setModalMessage } =
+    useContext(AuthContex);
+  const [loading, setLoading] = useState(false);
+  const handelCreateUser = (email, password) => {
+    setLoading(true);
+    registerUser(email, password)
+      .then((res) => {
+        setLoading(false);
+        console.log(res.user);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setModalMessage(err.message);
+        setModalOpen(true);
+      });
+  };
   const { values, handleChange, handleSubmit, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
@@ -12,11 +29,11 @@ const Register = () => {
         email: "",
         password: "",
         confirmpassword: "",
-        checkbox:""
+        checkbox: "",
       },
       validationSchema: userSchema,
       onSubmit: (values) => {
-        console.log(values);
+        handelCreateUser(values.email, values.password);
       },
     });
   const [type, setType] = useState("password");
@@ -152,6 +169,7 @@ const Register = () => {
               <button
                 type="submit"
                 className="w-[5em] h-[2em] text-lg flex justify-center items-center bg-[#0284C7] rounded-[30em] text-color-white font-semibold hover:bg-color-blue"
+                disabled={loading}
               >
                 Register
               </button>
