@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import Logo from "../../assets/nica_dark.webp";
+import Logo from "../../assets/icons8-flower-80 (1).png";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -10,12 +10,13 @@ const Navbar = () => {
         <nav className="font-inter mx-auto h-auto w-full max-w-[1600px] lg:relative lg:top-0">
           <div className="flex flex-col px-6 py-6 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-2 xl:px-20">
             {/* <!-- LOGO - YOU CAN REPLACE THIS --> */}
-            <Link to={"/"}>
+            <Link className="flex items-center" to={"/"}>
               <img
                 src={Logo}
                 alt=""
-                className="inline-block max-h-6 max-w-full"
+                className="inline-block max-h-10 max-w-full ring-1 ring-[#00D991] rounded-full p-1"
               />
+              <span className="mt-3 ml-1 text-base text-color-white italic font-bold">Event</span>
             </Link>
             {/* <!-- MENU CONTENT 2 --> */}
             <div
@@ -25,19 +26,19 @@ const Navbar = () => {
             >
               <NavLink
                 to={"/"}
-                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
+                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-color-white max-[991px]:block md:px-10 lg:px-4"
               >
                 Home
               </NavLink>
               <NavLink
                 to={"/pricing"}
-                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
+                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-color-white max-[991px]:block md:px-10 lg:px-4"
               >
                 Pricing
               </NavLink>
               <NavLink
                 to={"/about"}
-                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-orange-600 max-[991px]:block md:px-10 lg:px-4"
+                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-color-white max-[991px]:block md:px-10 lg:px-4"
               >
                 About
               </NavLink>

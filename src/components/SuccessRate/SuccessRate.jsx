@@ -35,12 +35,12 @@ const SuccessRate = () => {
                 {isVisible && (
                   <>
                     <CountUp start={0} end={200} duration={3} />{" "}
-                    <span className="text-[#c9fd02]">+</span>
+                    <span className="text-color-blue">+</span>
                   </>
                 )}
               </h2>
               <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
-                200 <span className="text-[#c9fd02]">+</span>
+                200 <span className="text-color-blue">+</span>
               </h2>
             </div>
             {/* <!-- Fact Item --> */}
@@ -50,7 +50,7 @@ const SuccessRate = () => {
                 {isVisible && <CountUp start={0} end={15} />}
               </h2>
               <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
-                15 <span className="text-[#c9fd02]">+</span>
+                15 <span className="text-color-blue">+</span>
               </h2>
             </div>
             {/* <!-- Fact Item --> */}
@@ -60,12 +60,12 @@ const SuccessRate = () => {
                 {isVisible && (
                   <>
                     <CountUp start={0} end={1500} duration={3} />{" "}
-                    <span className="text-[#c9fd02]">+</span>
+                    <span className="text-color-blue">+</span>
                   </>
                 )}
               </h2>
               <h2 className=" lg:hidden mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
-                1500 <span className="text-[#c9fd02]">+</span>
+                1500 <span className="text-color-blue">+</span>
               </h2>
             </div>
             {/* <!-- Fact Item --> */}

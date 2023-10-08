@@ -9,7 +9,7 @@ const ServicesList = () => {
       .then((data) => setServices(data));
   }, []);
   return (
-    <div className="bg-color-background py-20 border-y-2 border-color-border">
+    <div className="bg-color-background py-20 border-b-2 border-color-border">
       <h1 className="text-4xl font-semibold text-color-white text-center">
         Our <span className="text-color-blue">Services</span>
       </h1>
