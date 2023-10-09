@@ -9,6 +9,7 @@ import PublicRoute from "./PublicRoute";
 import BookingList from "../pages/BookingList/BookingList";
 import About from "../pages/About/About";
 import Error from "../pages/Error/Error";
+import ForgotPassword from "../pages/ForgotPassword/ForgotPassword";
 
 const routes = createBrowserRouter([
   {
@@ -60,6 +61,14 @@ const routes = createBrowserRouter([
           <PrivateRoute>
             <About />
           </PrivateRoute>
+        ),
+      },
+      {
+        path: "/forgot-password",
+        element: (
+          <PublicRoute>
+            <ForgotPassword />
+          </PublicRoute>
         ),
       },
     ],

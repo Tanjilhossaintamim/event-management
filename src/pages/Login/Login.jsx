@@ -114,7 +114,7 @@ const Login = () => {
                 Login
               </button>
 
-              <Link to={"/"} className="text-[#309CCF] cursor-pointer">
+              <Link to={"/forgot-password"} className="text-[#309CCF] cursor-pointer">
                 Forgot Password?
               </Link>
             </div>
