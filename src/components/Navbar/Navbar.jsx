@@ -41,10 +41,10 @@ const Navbar = () => {
                 Home
               </NavLink>
               <NavLink
-                to={"/pricing"}
+                to={"/booking-list"}
                 className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-color-white max-[991px]:block md:px-10 lg:px-4"
               >
-                Pricing
+                Booking List
               </NavLink>
               <NavLink
                 to={"/about"}

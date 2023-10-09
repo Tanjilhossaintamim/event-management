@@ -35,7 +35,7 @@ const Modal = () => {
         <div className="rounded w-[400px] lg:w-[600px] space-y-8 bg-[#0f172a] border border-color-border p-5 absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
           <div className="grid h-full grid-cols-1 ">
             <div className="flex flex-col justify-center py-10">
-              <h3 className="mb-2 text-lg text-center font-bold text-red-600">
+              <h3 className="mb-2 text-lg text-center font-bold text-red-500">
                 {modalMessage}
               </h3>
             </div>

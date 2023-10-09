@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
+import BookingList from "../pages/BookingList/BookingList";
 
 const routes = createBrowserRouter([
   {
@@ -39,6 +40,14 @@ const routes = createBrowserRouter([
           <PublicRoute>
             <Register />
           </PublicRoute>
+        ),
+      },
+      {
+        path: "/booking-list",
+        element: (
+          <PrivateRoute>
+            <BookingList />
+          </PrivateRoute>
         ),
       },
     ],
