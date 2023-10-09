@@ -4,6 +4,7 @@ import TestmonialList from "../../components/Testmonial/TestmonialList";
 import ServicesList from "../../components/servicesList/ServicesList";
 
 const Home = () => {
+  document.title = "Home";
   return (
     <div>
       <Banner />

@@ -56,6 +56,7 @@ const Register = () => {
       ? setConfirmPasswordTypeType("text")
       : setConfirmPasswordTypeType("password");
   };
+  document.title = "Register";
 
   return (
     <div className="flex justify-center items-center my-10 ">

@@ -15,11 +15,12 @@ const BookingList = () => {
     content=myEvents.map(event=><MyBooking event={event} key={event.id}/>)
   }
   else{
-    content=<div className="text-2xl text-color-white text-center">No Booking Event !</div>
+    content=<div className="text-2xl text-color-white text-center">No Booked Event !</div>
   }
+  document.title="Booked List"
   return (
     <div className="min-h-[70vh] grid place-content-center my-8 lg:my-0">
-        <div className="max-w-[1600px] mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-6 place-content-center">
+        <div data-aos="fade-left" className="max-w-[1600px] mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-6 place-content-center">
             {content}
         </div>
     </div>

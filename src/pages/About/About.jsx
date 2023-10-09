@@ -9,12 +9,15 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import { eventAccordion } from "../../utils/accordionData";
 
 const About = () => {
+  document.title = "About";
   return (
-    <div className="max-w-[1600px] min-h-[70vh] mx-auto px-4 lg:px-0 bg-transparent text-color-white flex justify-center items-center">
+    <div
+      data-aos="fade-up"
+      className="max-w-[1600px] min-h-[70vh] mx-auto px-4 lg:px-0 bg-transparent text-color-white flex justify-center items-center"
+    >
       <div className="w-full my-5 lg:my-0">
         <h1 className="text-2xl md:text-3xl text-color-white font-bold mb-3">
-          Frequently asked questions{" "}
-          <span className="text-color-blue">Answer the question </span>
+          People also <span className="text-color-blue">ask </span>
         </h1>
         <Accordion allowZeroExpanded>
           {eventAccordion.map((accordion) => (

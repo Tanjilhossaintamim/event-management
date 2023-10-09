@@ -34,10 +34,11 @@ const EventDetails = () => {
       }, 2000);
     }
   };
-  const { eventName, details, image, price } = event || {};
-  return (
-    <div className="py-10 text-color-white grid place-content-center">
-      <div className="max-w-[1600px] min-h-[80vh] mx-auto px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center">
+  const { id: eventId, eventName, details, image, price } = event || {};
+  let content = null;
+  if (eventId) {
+    content = (
+      <>
         <img src={image} alt="" className="rounded border-2 border-green-500" />
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl md:text-3xl font-bold">{eventName}</h1>
@@ -50,6 +51,18 @@ const EventDetails = () => {
             Book Now
           </button>
         </div>
+      </>
+    );
+  } else {
+    content = (
+      <div className="text-center text-2xl text-color-white">Not Found !</div>
+    );
+  }
+  document.title = eventName || "Event Details";
+  return (
+    <div className="py-10 text-color-white grid place-content-center">
+      <div className="max-w-[1600px] min-h-[80vh] mx-auto px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-6 place-content-center">
+        {content}
       </div>
     </div>
   );

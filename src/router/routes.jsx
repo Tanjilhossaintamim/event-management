@@ -8,11 +8,13 @@ import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import BookingList from "../pages/BookingList/BookingList";
 import About from "../pages/About/About";
+import Error from "../pages/Error/Error";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",

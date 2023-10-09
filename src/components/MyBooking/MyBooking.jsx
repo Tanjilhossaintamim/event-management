@@ -4,7 +4,10 @@ import PropTypes from "prop-types";
 const MyBooking = ({ event }) => {
   const { id, eventName, price, image } = event || {};
   return (
-    <div className="w-[312px] h-auto lg:w-[630px] md:ml-10 lg:ml-0 lg:h-200px rounded-lg flex flex-col lg:flex-row lg:items-center text-color-white bg-[#0B1120] border border-color-border">
+    <div
+      data-aos="fade-right"
+      className="w-[312px] h-auto lg:w-[630px] md:ml-10 lg:ml-0 lg:h-200px rounded-lg flex flex-col lg:flex-row lg:items-center text-color-white bg-[#0B1120] border border-color-border"
+    >
       <div className="w-full lg:w-[220px] h-[200px] relative ">
         <img
           src={image}

@@ -43,6 +43,8 @@ const Login = () => {
   const handelShowPassword = () => {
     type == "password" ? setType("text") : setType("password");
   };
+  document.title = "Login";
+
   return (
     <div className="flex justify-center items-center my-10 h-[70vh]">
       <div className="text-color-white text-center font-bold px-4 lg:px-0 ">
