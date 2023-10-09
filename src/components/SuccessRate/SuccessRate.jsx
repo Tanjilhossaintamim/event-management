@@ -12,7 +12,7 @@ const SuccessRate = () => {
       {/* <!-- Container --> */}
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
         {/* <!-- Heading Content --> */}
-        <div className="mx-auto max-w-3xl text-center">
+        <div ref={ref} className="mx-auto max-w-3xl text-center">
           <h2 className="text-4xl font-semibold text-color-white text-center">
             Our <span className="text-color-blue">History</span>
           </h2>
@@ -24,10 +24,7 @@ const SuccessRate = () => {
         </div>
         {/* <!-- Facts --> */}
         <div className="mx-auto flex max-w-[960px] flex-col px-16 py-8">
-          <div
-            ref={ref}
-            className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-2 md:gap-12 lg:grid-cols-4"
-          >
+          <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
             {/* <!-- Fact Item --> */}
             <div className="flex flex-col items-center justify-center gap-4">
               <p>Already Booked</p>
