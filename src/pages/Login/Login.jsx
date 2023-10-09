@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { signInSchema } from "../../utils/validateEmail";
+import { signInSchema } from "../../utils/schema";
 import { AuthContex } from "../../provider/AuthProvider";
 
 const Login = () => {

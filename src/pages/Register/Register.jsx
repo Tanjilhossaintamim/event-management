@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { userSchema } from "../../utils/validateEmail";
+import { userSchema } from "../../utils/schema";
 import { useFormik } from "formik";
 import { AuthContex } from "../../provider/AuthProvider";
 
