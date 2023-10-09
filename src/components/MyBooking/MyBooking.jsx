@@ -17,7 +17,7 @@ const MyBooking = ({ event }) => {
       </div>
       <div className="ml-5 py-5 lg:py-0 ">
         <h1 className="text-2xl font-semibold mb-2 w-full">{eventName}</h1>
-        <h3 className="text-[16px] font-semibold mb-2">${price}</h3>
+        <h3 className="text-[16px] font-semibold mb-2">{price}</h3>
         <Link to={`/event-details/${id}`}>
           <button className="inline-block rounded bg-[rgb(25,113,194)] px-6 pb-2 pt-2.5  font-medium uppercase leading-normal text-color-white  transition duration-150 ease-in-out btn text-xs shadow-none">
             View
