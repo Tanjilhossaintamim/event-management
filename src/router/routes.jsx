@@ -7,6 +7,7 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 import BookingList from "../pages/BookingList/BookingList";
+import About from "../pages/About/About";
 
 const routes = createBrowserRouter([
   {
@@ -47,6 +48,15 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <BookingList />
+          </PrivateRoute>
+        ),
+      },
+
+      {
+        path: "/about",
+        element: (
+          <PrivateRoute>
+            <About />
           </PrivateRoute>
         ),
       },
