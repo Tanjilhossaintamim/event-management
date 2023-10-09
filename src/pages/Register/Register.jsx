@@ -4,20 +4,26 @@ import { Link } from "react-router-dom";
 import { userSchema } from "../../utils/schema";
 import { useFormik } from "formik";
 import { AuthContex } from "../../provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { registerUser, setModalOpen, setModalMessage, googleSignIn } =
-    useContext(AuthContex);
+  const {
+    registerUser,
+    setModalOpen,
+    setModalMessage,
+    googleSignIn,
+ 
+  } = useContext(AuthContex);
   const [loading, setLoading] = useState(false);
   const handelGoogleSignIn = () => {
     googleSignIn();
   };
-  const handelCreateUser = (email, password) => {
+  const handelCreateUser = (email, password, name) => {
     setLoading(true);
     registerUser(email, password)
       .then((res) => {
         setLoading(false);
-        console.log(res.user);
+        updateProfile(res.user,{displayName:name})
       })
       .catch((err) => {
         setLoading(false);
@@ -36,7 +42,7 @@ const Register = () => {
       },
       validationSchema: userSchema,
       onSubmit: (values) => {
-        handelCreateUser(values.email, values.password);
+        handelCreateUser(values.email, values.password, values.name);
       },
     });
   const [type, setType] = useState("password");

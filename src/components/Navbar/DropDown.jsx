@@ -3,7 +3,8 @@ import ProfileIcon from "../../assets/profileicon.png";
 import PropTypes from "prop-types";
 import { AuthContex } from "../../provider/AuthProvider";
 const DropDown = ({ showDropDown, control }) => {
-  const { logout } = useContext(AuthContex);
+  const { logout, user } = useContext(AuthContex);
+ 
   const handelSignOut = () => {
     logout();
   };
@@ -25,6 +26,11 @@ const DropDown = ({ showDropDown, control }) => {
         } `}
         aria-labelledby="dropdownMenuSmallButton"
       >
+        {user?.displayName && (
+          <li>
+            <span className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal  hover:bg-color-background hover:text-color-white  cursor-pointer">{user.displayName}</span>
+          </li>
+        )}
         <li onClick={handelSignOut}>
           <span className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal  hover:bg-color-background hover:text-color-white  cursor-pointer">
             Logout

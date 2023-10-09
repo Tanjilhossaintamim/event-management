@@ -9,8 +9,16 @@ const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
   const loaction = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (showNav) {
+      setShowNav(false);
+    }
+    if (showDropDown) {
+      setShowDropDown(false);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loaction]);
   return (
     <section className="sticky top-0 z-50 border-b border-[rgba(248,250,252,.08)]">
@@ -41,17 +49,18 @@ const Navbar = () => {
                 Home
               </NavLink>
               <NavLink
-                to={"/booking-list"}
-                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-color-white max-[991px]:block md:px-10 lg:px-4"
-              >
-                Booking List
-              </NavLink>
-              <NavLink
                 to={"/about"}
                 className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-color-white max-[991px]:block md:px-10 lg:px-4"
               >
                 About
               </NavLink>
+              <NavLink
+                to={"/booking-list"}
+                className="px-5 py-2 font-medium rounded-lg text-color-gray text-sm transition hover:text-color-white max-[991px]:block md:px-10 lg:px-4"
+              >
+                Booking List
+              </NavLink>
+
               {!user ? (
                 <Link
                   to={"/login"}
