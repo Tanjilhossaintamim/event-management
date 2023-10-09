@@ -101,6 +101,17 @@ const Footer = () => {
               © Copyright 2023. All rights reserved.
             </p>
           </div>
+          <div className="flex gap-2">
+            Developed by{" "}
+            <a
+              className="text-color-blue hover:underline"
+              href="https://www.linkedin.com/in/tanjil-hossain-4755b3264/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Tanjil Hossain
+            </a>
+          </div>
           <div className="space-x-3 py-2 text-center font-semibold">
             <Link
               to={"/"}
