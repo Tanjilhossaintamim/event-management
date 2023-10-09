@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { saveEvent } from "../../utils/saveBookedEvent";
+import { AuthContex } from "../../provider/AuthProvider";
 
 const EventDetails = () => {
   const { id } = useParams();
   const [event, setEvent] = useState({});
+  const { setModalOpen, setModalMessage } = useContext(AuthContex);
   useEffect(() => {
     fetch("/events.json")
       .then((res) => res.json())
@@ -11,7 +14,26 @@ const EventDetails = () => {
         const displayedEvent = data?.find((event) => event.id == id);
         setEvent(displayedEvent);
       });
-  }, [id, setEvent]);
+  }, [id]);
+
+  const handelSaveEvent = () => {
+    const isSaved = saveEvent(event);
+    if (!isSaved) {
+      setModalMessage("Sorry! You Already Booked This Event !");
+      setModalOpen(true);
+      setTimeout(() => {
+        setModalMessage("");
+        setModalOpen(false);
+      }, 2000);
+    } else {
+      setModalMessage("Event Booked Successfully !");
+      setModalOpen(true);
+      setTimeout(() => {
+        setModalMessage("");
+        setModalOpen(false);
+      }, 2000);
+    }
+  };
   const { eventName, details, image, price } = event || {};
   return (
     <div className="py-10 text-color-white grid place-content-center">
@@ -21,7 +43,10 @@ const EventDetails = () => {
           <h1 className="text-2xl md:text-3xl font-bold">{eventName}</h1>
           <h6 className="text-xl font-semibold">{price}</h6>
           <p className="text-color-gray text-justify">{details}</p>
-          <button className="inline-block rounded bg-[rgb(25,113,194)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-color-white  transition duration-150 ease-in-out btn shadow-none">
+          <button
+            onClick={handelSaveEvent}
+            className="inline-block rounded bg-[rgb(25,113,194)] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-color-white  transition duration-150 ease-in-out btn shadow-none"
+          >
             Book Now
           </button>
         </div>
